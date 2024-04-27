@@ -1,0 +1,45 @@
+---
+import FooterBlock from './footer-block.astro';
+import FooterNetworks from './footer-networks.astro';
+
+const blocks = [
+  {
+    title: 'Features',
+    links: [
+      { title: 'Link Shortening', url: '/shortening' },
+      { title: 'Branded Links', url: '/branded-links' },
+      { title: 'Analytics', url: '/analytics' },
+    ],
+  },
+  {
+    title: 'Resources',
+    links: [
+      { title: 'Blog', url: '/blog' },
+      { title: 'Developers', url: '/developers' },
+      { title: 'Support', url: '/support' },
+    ],
+  },
+  {
+    title: 'Company',
+    links: [
+      { title: 'About', url: '/about' },
+      { title: 'Our Team', url: '/our-team' },
+      { title: 'Careers', url: '/careers' },
+      { title: 'Contact', url: '/contact' },
+    ],
+  },
+];
+---
+
+<footer class='bg-gray-900 py-20'>
+  <div class='w-[90%] sm:container m-auto'>
+    <div class='flex flex-col gap-y-10 sm:flex-row justify-between'>
+      {
+        blocks.map((block) => (
+          <FooterBlock title={block.title} links={block.links} />
+        ))
+      }
+      <FooterNetworks />
+    </div>
+  </div>
+</footer>

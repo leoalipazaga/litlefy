@@ -1,0 +1,43 @@
+---
+import Navbar from '@/components/ui/navbar.svelte';
+import Footer from '@/components/footer.astro';
+import BaseLayout from '@/layouts/base.astro';
+import FormCreateLitlefy from '@/components/ui/form-create-litlefy.svelte';
+---
+
+<BaseLayout title='Shortly'>
+  <Navbar />
+  <main>
+    <section class='w-[90%] m-auto py-20 sm:container'>
+      <div class='flex flex-col justify-center items-center mt-5'>
+        <header class='md:w-3/4 lg:w-1/2 space-y-5'>
+          <h1 class='text-center text-5xl sm:text-6xl font-extrabold mb-4'>
+            More than just shorter links
+          </h1>
+          <h2 class='text-center text-lg text-gray-500'>
+            build your brand's recognition and get detailed insights on how your
+            links are performing
+          </h2>
+          <div class='mt-5'>
+            <FormCreateLitlefy client:load />
+          </div>
+        </header>
+      </div>
+    </section>
+    <section class='bg-purple-950 py-20'>
+      <div class='w-[90%] container m-auto'>
+        <h1 class='text-3xl font-bold text-center text-white mb-5'>
+          Boots your links today
+        </h1>
+        <div class='flex flex-center justify-center'>
+          <button
+            class='h-10 sm:w-36 px-6 text-center text-white bg-teal-400 rounded'
+          >
+            Get Started
+          </button>
+        </div>
+      </div>
+    </section>
+    <Footer />
+  </main>
+</BaseLayout>

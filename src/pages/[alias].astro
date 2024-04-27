@@ -1,0 +1,24 @@
+---
+export const prerender = false;
+
+import Base from '@/layouts/base.astro';
+
+interface Props {
+  alias: string;
+}
+const { alias } = Astro.params;
+
+if (alias) {
+  // TODO: check if alias exists
+  await new Promise((resolve) =>
+    setTimeout(() => {
+      resolve('');
+    }, 3000)
+  );
+  return Astro.redirect('/');
+}
+---
+
+<Base>
+  <p>{alias}</p>
+</Base>

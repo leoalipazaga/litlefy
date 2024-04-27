@@ -1,0 +1,30 @@
+---
+interface Link {
+  title: string;
+  url: string;
+}
+interface Props {
+  title: string;
+  links: Array<Link>;
+}
+
+const { title, links } = Astro.props;
+---
+
+<article>
+  <h1 class='text-white font-medium mb-5'>{title}</h1>
+  <ul class='flex flex-col gap-5'>
+    {
+      links.map((link) => (
+        <li>
+          <a
+            class='text-gray-400 hover:text-teal-400 transition duration-200'
+            href={link.url}
+          >
+            {link.title}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</article>
